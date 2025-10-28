@@ -1,1 +1,37 @@
-# miraipost
+# 🌸 未来ポスト（Future Post）
+
+未来の自分や大切な人にメッセージを送ることができる、  
+タイムカプセル型の Web アプリケーションです。  
+指定した日時になると、登録したメールアドレスにメッセージが届きます。
+
+---
+
+## 🚀 主な機能
+- ✉️ 未来にメッセージを送信  
+- 🎨 手紙のテーマカラーやアイコンを自由に設定  
+- 🌤️ メッセージ作成時の天気情報を自動取得  
+- 💌 送信日時になると自動でメールを送信（PHP + Cron）  
+- 🔐 ユーザー登録・ログイン機能（セキュアな認証）  
+
+---
+
+## 🧱 使用技術
+
+| 分類 | 使用技術 |
+|------|-----------|
+| フロントエンド | Angular 17（TypeScript / SCSS） |
+| バックエンド | PHP 8.2 |
+| データベース | MySQL 8 |
+| メール送信 | PHPMailer |
+| 環境構築 | Docker / Docker Compose |
+| 管理ツール | phpMyAdmin |
+| バージョン管理 | Git / GitHub / Sourcetree |
+
+---
+
+## 🐳 開発環境の立ち上げ方
+
+### ① リポジトリをクローン
+```bash
+git clone https://github.com/your-username/future-post.git
+cd future-post

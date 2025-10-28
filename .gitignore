@@ -1,0 +1,29 @@
+# Node / Angular
+node_modules/
+dist/
+npm-debug.log
+yarn-error.log
+
+# PHP / Composer
+vendor/
+composer.lock
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.production.local
+
+# IDE / Editor
+.vscode/
+.idea/
+.DS_Store
+
+# Docker
+db_data/
+*.pid
+
+# Build artifacts
+coverage/
+tmp/
+logs/

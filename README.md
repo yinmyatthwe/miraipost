@@ -27,11 +27,3 @@
 | 管理ツール | phpMyAdmin |
 | バージョン管理 | Git / GitHub / Sourcetree |
 
----
-
-## 🐳 開発環境の立ち上げ方
-
-### ① リポジトリをクローン
-```bash
-git clone https://github.com/your-username/future-post.git
-cd future-post

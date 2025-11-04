@@ -1,12 +1,11 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   imports: [RouterOutlet],
-  templateUrl: './components/home/home.html',
-  styleUrl: './app.css'
+  template: `<router-outlet></router-outlet>`,
+  styleUrls: ['./app.css']
 })
-export class App {
-  protected readonly title = signal('miraipost_app');
-}
+export class AppComponent {}

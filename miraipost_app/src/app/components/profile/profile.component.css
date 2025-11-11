@@ -1,0 +1,117 @@
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  background-color: #F1F9EC;
+  margin: 0;
+}
+
+/* mainを中央寄せする */
+main {
+  background: #fff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  width: 350px;
+  margin: 80px auto; /* 横中央＆上に少し余白 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 見出し */
+main h2 {
+  color: #7EAE0B;
+  margin-bottom: 24px;
+}
+
+
+.profile-item {
+  display: block;
+  background-color: #fff;
+  border: 1px solid #c8e6c9;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 80%; /* mainの中でバランスよく */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: left;
+  font-size: 14px;
+  color: #333;
+}
+
+/* 変更リンク */
+.profile-item a {
+  color: #7EAE0B;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.profile-item a:hover {
+  text-decoration: underline;
+}
+
+
+.btn-write, .btn-list, .btn-reply {
+  display: block;
+  background-color: white;
+  color: #7EAE0B;
+  padding: 10px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+  transition: 0.3s;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  width: 80%;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.btn-write:hover,
+.btn-list:hover,
+.btn-reply:hover {
+  background-color: white;
+  color: #7EAE0B;
+  border: 2px solid #7EAE0B;
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 10px 40px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+header h1 {
+  color: #7EAE0B;
+  font-size: 20px;
+}
+
+header nav a {
+  color: #7EAE0B;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+header nav a:hover {
+  color: #5f8608;
+}
+
+
+footer {
+  text-align: center;
+  padding: 10px;
+  font-size: 12px;
+  color: #777;
+  margin-top: 40px;
+}

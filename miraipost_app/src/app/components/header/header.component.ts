@@ -1,0 +1,22 @@
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+@Component({
+  selector: 'app-header',
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css']
+})
+export class HeaderComponent {
+  activeLink: string = 'home';
+
+  setActive(link: string): void {
+    this.activeLink = link;
+  }
+
+  toggleProfile(): void {
+    console.log('Profile clicked');
+    // Add your profile menu logic here
+  }
+}

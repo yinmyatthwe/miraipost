@@ -15,6 +15,9 @@
       <a href="#" class="nav-link" [class.active]="activeLink === 'timeline'" (click)="setActive('timeline')">
         タイムライン
       </a>
+       <a routerLink="/about" class="nav-link" [class.active]="activeLink === 'timeline'" (click)="setActive('timeline')">
+        About US 
+      </a>
     </nav>
 
     <button class="profile-btn" (click)="toggleProfile()">

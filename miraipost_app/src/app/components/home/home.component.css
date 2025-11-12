@@ -1,0 +1,148 @@
+body {
+  margin: 0;
+  font-family: "Hiragino Kaku Gothic ProN", sans-serif;
+  background-color: #eaf5e7;
+  color: #333;
+}
+
+
+.profile-icon {
+  display: inline-block;
+  background: #ede8f9;
+  padding: 5px 10px;
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+.hero {
+  text-align: center;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  margin: 20px auto;
+}
+
+.hero img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.prompt {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.prompt h2 {
+  margin-bottom: 20px;
+}
+
+/* Four white boxes - image left, text right */
+.letter-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.letter-item {
+  background: white;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.letter-item img {
+  width: 120px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.letter-item p {
+  color: #7EAE0B;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: left;
+}
+
+/* Buttons */
+.buttons {
+  margin: 25px 0;
+}
+
+.btn {
+  background: white;
+  color: black;
+  border: 2px solid white;
+  border-radius: 20px;
+  margin: 5px;
+  padding: 8px 18px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  border-color: #7EAE0B;
+}
+
+/* Active button (when clicked) */
+.btn.active {
+  background: #7EAE0B;
+  color: white;
+  border-color: #7EAE0B;
+}
+
+
+/* Add Button */
+.add-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 120px;
+  background-color: #7EAE0B;
+  color: #fff;
+  font-size: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+/* Timeline section */
+.timeline {
+  width: 90%;
+  margin: 40px auto;
+}
+
+.timeline h3 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.timeline-box {
+  background: white;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.timeline-card {
+  background: #E8F3E8;
+  border-radius: 12px;
+  padding: 10px;
+  width: 28%;
+  text-align: center;
+}
+
+.timeline-card .icon {
+  font-size: 24px;
+  margin-top: 5px;
+}

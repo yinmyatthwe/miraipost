@@ -1,0 +1,282 @@
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  background-color: #F1F9EC;
+  margin: 0;
+}
+
+/* mainを中央寄せする */
+main {
+  background: #fff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  width: 350px;
+  margin: 80px auto; /* 横中央＆上に少し余白 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 見出し */
+main h2 {
+  color: #7EAE0B;
+  margin-bottom: 24px;
+}
+
+
+.profile-item {
+  display: block;
+  background-color: #fff;
+  border: 1px solid #c8e6c9;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 80%; /* mainの中でバランスよく */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: left;
+  font-size: 14px;
+  color: #333;
+}
+
+/* 変更リンク */
+.profile-item a {
+  color: #7EAE0B;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.profile-item a:hover {
+  text-decoration: underline;
+}
+
+
+.btn-write, .btn-list, .btn-reply {
+  display: block;
+  background-color: white;
+  color: #7EAE0B;
+  padding: 10px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+  transition: 0.3s;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  width: 80%;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.btn-write:hover,
+.btn-list:hover,
+.btn-reply:hover {
+  background-color: white;
+  color: #7EAE0B;
+  border: 2px solid #7EAE0B;
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  padding: 10px 40px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+header h1 {
+  color: #7EAE0B;
+  font-size: 20px;
+}
+
+header nav a {
+  color: #7EAE0B;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+header nav a:hover {
+  color: #5f8608;
+}
+
+
+footer {
+  text-align: center;
+  padding: 10px;
+  font-size: 12px;
+  color: #777;
+  margin-top: 40px;
+}
+/* 入力欄 */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 80%;
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1.5px solid #7EAE0B;
+  border-radius: 6px;
+  outline: none;
+}
+
+input:focus {
+  box-shadow: 0 0 5px #A7D36A;
+}
+
+/* 新規登録ボタン、ログインボタン */
+.btn-login, .btn-signup {
+  display: inline-block;
+  background-color: #7EAE0B;
+  color: white;
+  padding: 10px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+  transition: 0.3s;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.btn-login:hover,
+.btn-signup:hover {
+  background-color: white;
+  color: #7EAE0B;
+  border: 2px solid #7EAE0B;
+}
+
+/* テキストリンク（下部のログイン・新規登録） */
+a.link-text {
+  color: #7EAE0B;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a.link-text:hover {
+  text-decoration: underline;
+}
+
+/* 小さい説明文など */
+p {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/*ヘッダーのナビ*/
+header nav a {
+  color: #7EAE0B;
+  text-decoration: none;
+  margin: 0 10px;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+header nav a:hover {
+  color: #5f8608;  /* 濃い緑に変化 */
+}
+
+profile-item {
+  display: block;
+  background-color: #fff;
+  border: 1px solid #c8e6c9;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  width: 300px; /* カードの固定幅 */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: left;
+  font-size: 14px;
+  color: #333;
+}
+
+/* カード内のテキスト整形 */
+.profile-item a {
+  color: #7EAE0B;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.profile-item a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+/*ホームのタグ*/
+.write-post {
+  display: inline-block;
+  background-color: white;
+  color: #7EAE0B;
+  padding: 10px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+  transition: 0.3s;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  width:200px;
+  text-align: center;
+}
+.write-post:hover{
+background-color: white;
+  color: #7EAE0B;
+  border: 2px solid #7EAE0B;
+}
+
+.btn-write, .btn-list,.profile-item,.btn-reply {
+  display: inline-block;
+  background-color: white;
+  color: #7EAE0B;
+  padding: 10px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  border: none;
+  transition: 0.3s;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  width:200px;
+  text-align: center;
+}
+
+.btn-write:hover,
+.btn-list:hover,
+.btn-reply:hover {
+  background-color: white;
+  color: #7EAE0B;
+  border: 2px solid #7EAE0B;
+}
+
+/*プロフィール欄*/
+.profile-item {
+  display: block;
+  background-color: #fff;
+  border: 1px solid #c8e6c9;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  width: 200px; /* カードの固定幅 */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: left;
+  font-size: 14px;
+  color: #333;
+}
+
+/* カード内のテキスト整形 */
+.profile-item a {
+  color: #7EAE0B;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.profile-item a:hover {
+  text-decoration: underline;
+} 

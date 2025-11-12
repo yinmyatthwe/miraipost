@@ -1,26 +1,14 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
-
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [
-    CommonModule,
-    RouterLink],
+  imports: [CommonModule, RouterModule],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  activeLink: string = 'home';
-
-  setActive(link: string): void {
-    this.activeLink = link;
-  }
-
-  toggleProfile(): void {
-    console.log('Profile clicked');
-    // Add your profile menu logic here
-  }
+  // No logic needed - just simple links!
 }

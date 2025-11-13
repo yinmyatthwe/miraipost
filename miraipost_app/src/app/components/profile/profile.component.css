@@ -1,65 +1,113 @@
-
-/* mainを中央寄せする */
-main {
-    flex: 1;
-    padding: 1rem 2rem 2rem;
+.profile-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
 }
 
-.main-card {
-    max-width: 700px;
-    margin: 0 auto;
-    background-color: #ffffff;
-    border-radius: 20px;
-    padding: 3rem 2.5rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+.profile-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
 }
-.title {
-    text-align: center;
-    color: #7cb342;
-    font-size: 3rem;
-    font-weight: 600;
-    margin-bottom: 2.5rem;
+
+.profile-title {
+  font-size: 1.75rem;
+  color: #1f2937;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.profile-section {
+  margin-bottom: 2rem;
 }
 
 .profile-item {
-    background-color: #e8f5e9;
-    border-radius: 15px;
-    min-height: 110px;
-    padding: 1.5rem;
-    margin: 0 2rem;
+  display: grid;
+  grid-template-columns: 150px 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #f3f4f6;
 }
 
-/* 変更リンク */
-.profile-item a {
-  color: #7EAE0B;
+.profile-item:last-child {
+  border-bottom: none;
+}
+
+.profile-label {
+  font-weight: 600;
+  color: #4b5563;
+  font-size: 0.95rem;
+}
+
+.profile-value {
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+.profile-btn-edit {
+  color: #84cc16;
   text-decoration: none;
-  font-weight: bold;
-}
-
-.profile-item a:hover {
-  text-decoration: underline;
-}
-
-
-.btn-write, .btn-list, .btn-reply {
-  display: block;
-  background-color: white;
-  color: #7EAE0B;
+  font-size: 0.9rem;
+  padding: 0.4rem 1rem;
+  border: 1px solid #84cc16;
   border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  border: none;
-  transition: 0.3s;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-  padding: 1.5rem;
-  margin: 0 2rem;
-  text-align: center;
+  transition: all 0.2s ease;
 }
 
-.btn-write:hover,
-.btn-list:hover,
-.btn-reply:hover {
-  background-color: white;
-  color: #7EAE0B;
-  border: 2px solid #7EAE0B;
+.profile-btn-edit:hover {
+  background: #84cc16;
+  color: white;
+}
+
+.profile-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+
+.profile-action-btn {
+  display: block;
+  text-align: center;
+  padding: 0.875rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.profile-action-btn.posts {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.profile-action-btn.posts:hover {
+  background: #bfdbfe;
+}
+
+.profile-action-btn.replies {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.profile-action-btn.replies:hover {
+  background: #fde68a;
+}
+
+.profile-action-btn.write {
+  background: #84cc16;
+  color: white;
+}
+
+.profile-action-btn.write:hover {
+  background: #65a30d;
+}
+
+@media (max-width: 640px) {
+  .profile-item {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
 }

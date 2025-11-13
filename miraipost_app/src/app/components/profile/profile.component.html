@@ -1,24 +1,31 @@
-<main>
-    <div class="main-card">
-    <h1 class="title">プロフィール</h1>
+<main class="profile-container">
+  <div class="profile-card">
+    <h1 class="profile-title">プロフィール</h1>
     
-    <div class ="profile-item">
-        <span class="label">名前</span>
-        <span class="value">########</span>
-        <a href="#" class="btn-edit">変更</a><br>
+    <div class="profile-section">
+      <div class="profile-item">
+        <span class="profile-label">名前</span>
+        <span class="profile-value">########</span>
+        <a href="#" class="profile-btn-edit">変更</a>
+      </div>
 
-        <span class="label">メールアドレス</span>
-        <span class="value">########</span>
-        <a href="#" class="btn-edit">変更</a><br>
+      <div class="profile-item">
+        <span class="profile-label">メールアドレス</span>
+        <span class="profile-value">########</span>
+        <a href="#" class="profile-btn-edit">変更</a>
+      </div>
 
-        <span class="label">パスワード</span>
-        <span class="value">########</span>
-        <a href="#" class="btn-edit">変更</a>
+      <div class="profile-item">
+        <span class="profile-label">パスワード</span>
+        <span class="profile-value">########</span>
+        <a href="#" class="profile-btn-edit">変更</a>
+      </div>
     </div>
-<br>
-    <a href="#" class="btn-list">私の投稿</a><br>
-    <a href="#" class="btn-reply">返信</a><br>
-    <a href="#" class="btn-write">手紙作成</a>
+
+    <div class="profile-actions">
+      <a routerLink="/my-posts" class="profile-action-btn posts">私の投稿</a>
+      <a routerLink="/replies" class="profile-action-btn replies">返信</a>
+      <a routerLink="/write" class="profile-action-btn write">手紙作成</a>
     </div>
-    
-  </main>
+  </div>
+</main>

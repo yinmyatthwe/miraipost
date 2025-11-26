@@ -1,64 +1,125 @@
-<main>
-    <h2>手紙作成</h2>
+<main class="write-letter-container">
+  <div class="write-letter-card">
+    <h2 class="write-letter-title">手紙作成</h2>
 
-    <div class="who">
-      <a>誰に向けての手紙</a><br>
-      <label class="selectbox">
-        <select>
-          <option>未来の自分へ向けて</option>
-          <option>大切な家族へ向けて</option>
-          <option>大切な友達へ向けて</option>
-        </select>
-      </label>
-    </div>
-
-    <div class="dear">
-      <a>宛先</a><br>
-      <input type="text" name="email" placeholder="メールアドレス">
-    </div>
-
-    <div class="date">
-      <a>お届け日</a><br>
-      <input type="text" id="datepicker" placeholder="日付を選択">
-    </div>
-
-    <div class="title">
-    <a>タイトル</a><br>
-    <input type="text" name ="title" placeholder="">
-    </div>
-
-    <div class="picture">
-      <a>写真を追加</a><br>
-      <input type="file" accept="image/*" id="imageInput">
-
-    </div>
-
-    <div class="letter">
-      <a>手紙の内容</a>
-
-      <div class="paper-select">
-        <label>
-          <input type="radio" name="paper" value="plain" checked>
-          <img src="images/paper_plain.png" alt="○○便箋">
-        </label>
-
-        <label>
-          <input type="radio" name="paper" value="flower">
-          <img src="" alt="○○便箋">
-        </label>
-
-        <label>
-          <input type="radio" name="paper" value="sky">
-          <img src="" alt="○○便箋">
-        </label>
+    <form class="write-letter-form" (ngSubmit)="onSubmit()">
+      <!-- Who Section -->
+      <div class="write-letter-section">
+        <label class="write-letter-label">誰に向けての手紙</label>
+        <div class="write-letter-selectbox">
+          <select 
+            class="write-letter-select"
+            [(ngModel)]="letterData.recipient"
+            name="recipient">
+            <option value="future">未来の自分へ向けて</option>
+            <option value="family">大切な家族へ向けて</option>
+            <option value="friend">大切な友達へ向けて</option>
+          </select>
+        </div>
       </div>
 
-      <textarea id="letter-content" placeholder="ここに手紙を書いてください"></textarea>
-    </div>
+      <!-- Email Section -->
+      <div class="write-letter-section">
+        <label class="write-letter-label">宛先</label>
+        <input 
+          type="email" 
+          class="write-letter-input"
+          placeholder="メールアドレス"
+          [(ngModel)]="letterData.email"
+          name="email"
+          required>
+      </div>
 
-    <div class="button-container">
-      <button id="btn-save">一時保存</button>
-      <button id="btn-send">送信</button>
-    </div>
-  </main>
-  
+      <!-- Date Section -->
+      <div class="write-letter-section">
+        <label class="write-letter-label">お届け日</label>
+        <input 
+          type="date" 
+          class="write-letter-input"
+          [(ngModel)]="letterData.deliveryDate"
+          name="deliveryDate"
+          required>
+      </div>
+
+      <!-- Title Section -->
+      <div class="write-letter-section">
+        <label class="write-letter-label">タイトル</label>
+        <input 
+          type="text" 
+          class="write-letter-input"
+          placeholder="手紙のタイトル"
+          [(ngModel)]="letterData.title"
+          name="title"
+          required>
+      </div>
+
+      <!-- Picture Section -->
+      <div class="write-letter-section">
+        <label class="write-letter-label">写真を追加</label>
+        <input 
+          type="file" 
+          class="write-letter-file-input"
+          accept="image/*"
+          (change)="onFileSelected($event)">
+        <div *ngIf="selectedFileName" class="write-letter-file-name">
+          選択済み: {{ selectedFileName }}
+        </div>
+      </div>
+
+      <!-- Letter Content Section -->
+      <div class="write-letter-section write-letter-content-section">
+        <label class="write-letter-label">手紙の内容</label>
+
+        <!-- Paper Selection -->
+        <div class="write-letter-paper-select">
+          <label class="write-letter-paper-option">
+            <input 
+              type="radio" 
+              name="paper" 
+              value="plain"
+              [(ngModel)]="letterData.paperType">
+            <img src="/images/plain_paper.jpg" alt="シンプル便箋" class="write-letter-paper-image">
+          </label>
+
+          <label class="write-letter-paper-option">
+            <input 
+              type="radio" 
+              name="paper" 
+              value="flower"
+              [(ngModel)]="letterData.paperType">
+            <img src="/images/flower.jpg" alt="花柄便箋" class="write-letter-paper-image">
+          </label>
+
+          <label class="write-letter-paper-option">
+            <input 
+              type="radio" 
+              name="paper" 
+              value="sky"
+              [(ngModel)]="letterData.paperType">
+            <img src="/images/sky.jpg" alt="空柄便箋" class="write-letter-paper-image">
+          </label>
+        </div>
+
+        <!-- Letter Textarea -->
+        <textarea 
+          class="write-letter-textarea"
+          [ngClass]="'paper-' + letterData.paperType"
+          placeholder="ここに手紙を書いてください"
+          [(ngModel)]="letterData.content"
+          name="content"
+          rows="10"
+          required></textarea>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="write-letter-actions">
+        <button type="button" class="write-letter-btn save" (click)="onSaveDraft()">
+          一時保存
+        </button>
+        <button type="submit" class="write-letter-btn send">
+          送信
+        </button>
+      </div>
+    </form>
+  </div>
+</main>

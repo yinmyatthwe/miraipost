@@ -1,0 +1,64 @@
+<main>
+    <h2>手紙作成</h2>
+
+    <div class="who">
+      <a>誰に向けての手紙</a><br>
+      <label class="selectbox">
+        <select>
+          <option>未来の自分へ向けて</option>
+          <option>大切な家族へ向けて</option>
+          <option>大切な友達へ向けて</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="dear">
+      <a>宛先</a><br>
+      <input type="text" name="email" placeholder="メールアドレス">
+    </div>
+
+    <div class="date">
+      <a>お届け日</a><br>
+      <input type="text" id="datepicker" placeholder="日付を選択">
+    </div>
+
+    <div class="title">
+    <a>タイトル</a><br>
+    <input type="text" name ="title" placeholder="">
+    </div>
+
+    <div class="picture">
+      <a>写真を追加</a><br>
+      <input type="file" accept="image/*" id="imageInput">
+
+    </div>
+
+    <div class="letter">
+      <a>手紙の内容</a>
+
+      <div class="paper-select">
+        <label>
+          <input type="radio" name="paper" value="plain" checked>
+          <img src="images/paper_plain.png" alt="○○便箋">
+        </label>
+
+        <label>
+          <input type="radio" name="paper" value="flower">
+          <img src="" alt="○○便箋">
+        </label>
+
+        <label>
+          <input type="radio" name="paper" value="sky">
+          <img src="" alt="○○便箋">
+        </label>
+      </div>
+
+      <textarea id="letter-content" placeholder="ここに手紙を書いてください"></textarea>
+    </div>
+
+    <div class="button-container">
+      <button id="btn-save">一時保存</button>
+      <button id="btn-send">送信</button>
+    </div>
+  </main>
+  

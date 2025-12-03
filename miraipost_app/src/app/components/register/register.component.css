@@ -1,282 +1,131 @@
-
-body {
-  font-family: "Noto Sans JP", sans-serif;
-  background-color: #F1F9EC;
-  margin: 0;
+.register-container {
+  min-height: calc(100vh - 200px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
 }
 
-/* mainを中央寄せする */
-main {
-  background: #fff;
-  padding: 40px;
+.register-card {
+  background: #ffffff;
   border-radius: 16px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 3rem 2.5rem;
+  width: 100%;
+  max-width: 450px;
+}
+
+.register-title {
+  font-size: 1.75rem;
+  color: #1f2937;
+  margin-bottom: 2rem;
   text-align: center;
-  width: 350px;
-  margin: 80px auto; /* 横中央＆上に少し余白 */
+  font-weight: 700;
+}
+
+.register-form {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 1.5rem;
 }
 
-/* 見出し */
-main h2 {
-  color: #7EAE0B;
-  margin-bottom: 24px;
-}
-
-
-.profile-item {
-  display: block;
-  background-color: #fff;
-  border: 1px solid #c8e6c9;
-  border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 20px;
-  width: 80%; /* mainの中でバランスよく */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  text-align: left;
-  font-size: 14px;
-  color: #333;
-}
-
-/* 変更リンク */
-.profile-item a {
-  color: #7EAE0B;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.profile-item a:hover {
-  text-decoration: underline;
-}
-
-
-.btn-write, .btn-list, .btn-reply {
-  display: block;
-  background-color: white;
-  color: #7EAE0B;
-  padding: 10px 24px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  border: none;
-  transition: 0.3s;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-  width: 80%;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-.btn-write:hover,
-.btn-list:hover,
-.btn-reply:hover {
-  background-color: white;
-  color: #7EAE0B;
-  border: 2px solid #7EAE0B;
-}
-
-
-header {
+.register-form-group {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #fff;
-  padding: 10px 40px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-header h1 {
-  color: #7EAE0B;
-  font-size: 20px;
+.register-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #374151;
 }
 
-header nav a {
-  color: #7EAE0B;
-  text-decoration: none;
-  margin: 0 10px;
-  font-weight: bold;
-  transition: 0.2s;
-}
-
-header nav a:hover {
-  color: #5f8608;
-}
-
-
-footer {
-  text-align: center;
-  padding: 10px;
-  font-size: 12px;
-  color: #777;
-  margin-top: 40px;
-}
-/* 入力欄 */
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-  width: 80%;
-  padding: 10px;
-  margin-bottom: 16px;
-  border: 1.5px solid #7EAE0B;
-  border-radius: 6px;
+.register-input {
+  padding: 0.875rem 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
   outline: none;
 }
 
-input:focus {
-  box-shadow: 0 0 5px #A7D36A;
+.register-input:focus {
+  border-color: #84cc16;
+  box-shadow: 0 0 0 3px rgba(132, 204, 22, 0.1);
 }
 
-/* 新規登録ボタン、ログインボタン */
-.btn-login, .btn-signup {
-  display: inline-block;
-  background-color: #7EAE0B;
+.register-input::placeholder {
+  color: #9ca3af;
+}
+
+.register-btn {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #84cc16;
   color: white;
-  padding: 10px 24px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
   border: none;
-  transition: 0.3s;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.btn-login:hover,
-.btn-signup:hover {
-  background-color: white;
-  color: #7EAE0B;
-  border: 2px solid #7EAE0B;
+.register-btn:hover {
+  background: #65a30d;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(132, 204, 22, 0.3);
 }
 
-/* テキストリンク（下部のログイン・新規登録） */
-a.link-text {
-  color: #7EAE0B;
-  text-decoration: none;
-  font-weight: 500;
+.register-btn:active {
+  transform: translateY(0);
 }
 
-a.link-text:hover {
-  text-decoration: underline;
+.register-btn:disabled {
+  background: #d1d5db;
+  cursor: not-allowed;
+  transform: none;
 }
 
-/* 小さい説明文など */
-p {
+.register-footer {
+  margin-top: 2rem;
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.register-footer-text {
+  color: #6b7280;
   font-size: 0.9rem;
-  color: #333;
+  margin-bottom: 0.75rem;
 }
 
-/*ヘッダーのナビ*/
-header nav a {
-  color: #7EAE0B;
+.register-login-link {
+  display: inline-block;
+  color: #84cc16;
   text-decoration: none;
-  margin: 0 10px;
-  font-weight: bold;
-  transition: 0.2s;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
 }
 
-header nav a:hover {
-  color: #5f8608;  /* 濃い緑に変化 */
-}
-
-profile-item {
-  display: block;
-  background-color: #fff;
-  border: 1px solid #c8e6c9;
-  border-radius: 10px;
-  padding: 20px;
-  margin: 20px auto;
-  width: 300px; /* カードの固定幅 */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  text-align: left;
-  font-size: 14px;
-  color: #333;
-}
-
-/* カード内のテキスト整形 */
-.profile-item a {
-  color: #7EAE0B;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.profile-item a:hover {
+.register-login-link:hover {
+  color: #65a30d;
   text-decoration: underline;
 }
 
+@media (max-width: 480px) {
+  .register-card {
+    padding: 2rem 1.5rem;
+  }
 
+  .register-title {
+    font-size: 1.5rem;
+  }
 
-
-
-/*ホームのタグ*/
-.write-post {
-  display: inline-block;
-  background-color: white;
-  color: #7EAE0B;
-  padding: 10px 24px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  border: none;
-  transition: 0.3s;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-  width:200px;
-  text-align: center;
+  .register-form {
+    gap: 1.25rem;
+  }
 }
-.write-post:hover{
-background-color: white;
-  color: #7EAE0B;
-  border: 2px solid #7EAE0B;
-}
-
-.btn-write, .btn-list,.profile-item,.btn-reply {
-  display: inline-block;
-  background-color: white;
-  color: #7EAE0B;
-  padding: 10px 24px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  border: none;
-  transition: 0.3s;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-  width:200px;
-  text-align: center;
-}
-
-.btn-write:hover,
-.btn-list:hover,
-.btn-reply:hover {
-  background-color: white;
-  color: #7EAE0B;
-  border: 2px solid #7EAE0B;
-}
-
-/*プロフィール欄*/
-.profile-item {
-  display: block;
-  background-color: #fff;
-  border: 1px solid #c8e6c9;
-  border-radius: 10px;
-  padding: 20px;
-  margin: 20px auto;
-  width: 200px; /* カードの固定幅 */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  text-align: left;
-  font-size: 14px;
-  color: #333;
-}
-
-/* カード内のテキスト整形 */
-.profile-item a {
-  color: #7EAE0B;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.profile-item a:hover {
-  text-decoration: underline;
-} 

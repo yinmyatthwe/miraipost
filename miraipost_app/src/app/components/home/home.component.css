@@ -1,0 +1,171 @@
+.home-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.home-prompt {
+  margin-bottom: 3rem;
+}
+
+.home-greeting {
+  font-size: 1.5rem;
+  color: #1f2937;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.home-letter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.home-letter-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.home-letter-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.home-letter-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.home-letter-text {
+  color: #4b5563;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.home-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.home-btn {
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.home-btn.pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.home-btn.pending:hover {
+  background: #fde68a;
+}
+
+.home-btn.inbox {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.home-btn.inbox:hover {
+  background: #bfdbfe;
+}
+
+.home-btn.draft {
+  background: #f3f4f6;
+  color: #4b5563;
+}
+
+.home-btn.draft:hover {
+  background: #e5e7eb;
+}
+
+.home-add-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #84cc16;
+  color: white;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(132, 204, 22, 0.4);
+  transition: all 0.3s ease;
+}
+
+.home-add-btn:hover {
+  background: #65a30d;
+  transform: scale(1.1);
+}
+
+.home-timeline {
+  margin-top: 3rem;
+}
+
+.home-timeline-title {
+  font-size: 1.25rem;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.home-timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.home-timeline-card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.home-timeline-date {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.home-timeline-recipient {
+  font-size: 0.95rem;
+  color: #1f2937;
+  font-weight: 500;
+}
+
+.home-timeline-icon {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .home-greeting {
+    font-size: 1.25rem;
+  }
+
+  .home-letter-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

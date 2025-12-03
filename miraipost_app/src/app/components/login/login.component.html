@@ -1,5 +1,38 @@
-<main class="main">
-  <div class="content">
-    ロックインページ
+<main class="login-container">
+  <div class="login-card">
+    <h2 class="login-title">ログイン</h2>
+    
+    <form class="login-form" (ngSubmit)="onLogin()">
+      <div class="login-form-group">
+        <label for="email" class="login-label">メールアドレス</label>
+        <input 
+          type="email" 
+          id="email"
+          name="email" 
+          class="login-input"
+          placeholder="example@email.com"
+          [(ngModel)]="email"
+          required>
+      </div>
+
+      <div class="login-form-group">
+        <label for="password" class="login-label">パスワード</label>
+        <input 
+          type="password" 
+          id="password"
+          name="password" 
+          class="login-input"
+          placeholder="パスワードを入力してください"
+          [(ngModel)]="password"
+          required>
+      </div>
+
+      <button type="submit" class="login-btn">ログイン</button>
+    </form>
+
+    <div class="login-footer">
+      <p class="login-footer-text">アカウントを持っていませんか？</p>
+      <a routerLink="/register" class="login-signup-link">新規登録</a>
+    </div>
   </div>
 </main>

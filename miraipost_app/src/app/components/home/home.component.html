@@ -1,7 +1,53 @@
-<main class="main">
-  <div class="content">
-    未来ポストホームページ<br />
-    <a routerLink="/register">会員登録</a> <br />
-    <a routerLink="/login">ロックイン</a>
-  </div>
+<main class="home-container">
+  <section class="home-prompt">
+    <h2 class="home-greeting">〇〇さん、今日はどんなお手紙を書きますか？</h2>
+
+    <div class="home-letter-grid">
+      <div class="home-letter-card" routerLink="/write/future">
+        <img src="/images/自分へ.jpg" alt="未来の自分へ" class="home-letter-image">
+        <p class="home-letter-text">未来の自分へ向けて</p>
+      </div>
+      <div class="home-letter-card" routerLink="/write/friend">
+        <img src="/images/友達と.jpg" alt="大切な友達へ" class="home-letter-image">
+        <p class="home-letter-text">大切な友達へむけて</p>
+      </div>
+      <div class="home-letter-card" routerLink="/write/family">
+        <img src="/images/家族と.jpg" alt="大切な家族へ" class="home-letter-image">
+        <p class="home-letter-text">大切な家族へ向けて</p>
+      </div>
+      <div class="home-letter-card" routerLink="/list">
+        <img src="/images/いっぽん的.jpg" alt="手紙一覧" class="home-letter-image">
+        <p class="home-letter-text">手紙一覧</p>
+      </div>
+    </div>
+
+    <div class="home-buttons">
+      <button class="home-btn pending">送信待ち</button>
+      <button class="home-btn inbox">受信箱</button>
+      <button class="home-btn draft">下書き</button>
+    </div>
+
+    <button class="home-add-btn" routerLink="/write">＋</button>
+  </section>
+
+  <section class="home-timeline">
+    <h3 class="home-timeline-title">手紙タイムライン</h3>
+    <div class="home-timeline-grid">
+      <div class="home-timeline-card">
+        <p class="home-timeline-date">〇月〇日</p>
+        <p class="home-timeline-recipient">未来の自分へ</p>
+        <div class="home-timeline-icon">✉️</div>
+      </div>
+      <div class="home-timeline-card">
+        <p class="home-timeline-date">〇月〇日</p>
+        <p class="home-timeline-recipient">未来の自分へ</p>
+        <div class="home-timeline-icon">✉️</div>
+      </div>
+      <div class="home-timeline-card">
+        <p class="home-timeline-date">〇月〇日</p>
+        <p class="home-timeline-recipient">未来の自分へ</p>
+        <div class="home-timeline-icon">✉️</div>
+      </div>
+    </div>
+  </section>
 </main>

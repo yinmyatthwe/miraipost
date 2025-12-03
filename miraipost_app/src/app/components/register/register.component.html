@@ -1,12 +1,63 @@
-<main>
-    <h2>新規登録</h2>
-    <input type="text" name="username" placeholder="名前"><br>
-    <input type="text" name="email" placeholder="メールアドレス"><br>
-    <input type="text" name="passwprd" placeholder="パスワード"><br>
+<main class="register-container">
+  <div class="register-card">
+    <h2 class="register-title">新規登録</h2>
+    
+    <form class="register-form" (ngSubmit)="onRegister()">
+      <div class="register-form-group">
+        <label for="username" class="register-label">名前</label>
+        <input 
+          type="text" 
+          id="username"
+          name="username" 
+          class="register-input"
+          placeholder="山田太郎"
+          [(ngModel)]="username"
+          required>
+      </div>
 
-    <a href="index.html" class="btn-signup">新規登録</a><br>
+      <div class="register-form-group">
+        <label for="email" class="register-label">メールアドレス</label>
+        <input 
+          type="email" 
+          id="email"
+          name="email" 
+          class="register-input"
+          placeholder="example@email.com"
+          [(ngModel)]="email"
+          required>
+      </div>
 
-    <a>すでにアカウントをお持ちですか？</a>
-    <a href="login.html" class="btn-login">ログイン</a>
+      <div class="register-form-group">
+        <label for="password" class="register-label">パスワード</label>
+        <input 
+          type="password" 
+          id="password"
+          name="password" 
+          class="register-input"
+          placeholder="8文字以上"
+          [(ngModel)]="password"
+          required
+          minlength="8">
+      </div>
 
-  </main>
+      <div class="register-form-group">
+        <label for="confirmPassword" class="register-label">パスワード確認</label>
+        <input 
+          type="password" 
+          id="confirmPassword"
+          name="confirmPassword" 
+          class="register-input"
+          placeholder="もう一度入力してください"
+          [(ngModel)]="confirmPassword"
+          required>
+      </div>
+
+      <button type="submit" class="register-btn">新規登録</button>
+    </form>
+
+    <div class="register-footer">
+      <p class="register-footer-text">すでにアカウントをお持ちですか？</p>
+      <a routerLink="/login" class="register-login-link">ログイン</a>
+    </div>
+  </div>
+</main>

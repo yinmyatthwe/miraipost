@@ -6,13 +6,18 @@ import { HeaderComponent } from './components/header/header.component';
 import { AppComponent } from './app';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AboutComponent } from './components/about/about.component';
-
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { WriteComponent } from './components/write/write.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'about', component: AboutComponent }
+  { path: 'about', component: AboutComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'write', component: WriteComponent }
+  
+  
 
 ];

@@ -3,18 +3,21 @@
     <h1 class="profile-title">プロフィール</h1>
     
     <div class="profile-section">
+      <!-- Name Section -->
       <div class="profile-item">
         <span class="profile-label">名前</span>
-        <span class="profile-value">########</span>
+        <span class="profile-value">{{ user?.name || '########' }}</span>
         <a href="#" class="profile-btn-edit">変更</a>
       </div>
 
+      <!-- Email Section -->
       <div class="profile-item">
         <span class="profile-label">メールアドレス</span>
-        <span class="profile-value">########</span>
+        <span class="profile-value">{{ user?.email || '########' }}</span>
         <a href="#" class="profile-btn-edit">変更</a>
       </div>
 
+      <!-- Password Section -->
       <div class="profile-item">
         <span class="profile-label">パスワード</span>
         <span class="profile-value">########</span>

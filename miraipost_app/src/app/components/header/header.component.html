@@ -10,9 +10,16 @@
       <a routerLink="/about" class="nav-link">About Us</a>
     </nav>
 
-    <div class="auth-links">
+    <!-- Show login/register when NOT logged in -->
+    <div class="auth-links" *ngIf="!currentUser">
       <a routerLink="/login" class="auth-link">ログイン</a>
       <a routerLink="/register" class="auth-link register">新規登録</a>
+    </div>
+
+    <!-- Show user name and logout when logged in -->
+    <div class="auth-links" *ngIf="currentUser">
+      <a routerLink="/profile" class="auth-link user-name">{{ userName }}</a>
+      <button (click)="onLogout()" class="auth-link logout-btn">ログアウト</button>
     </div>
   </div>
 </header>

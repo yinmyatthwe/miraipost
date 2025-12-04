@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -16,42 +17,33 @@ export class RegisterComponent {
   password: string = '';
   confirmPassword: string = '';
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private authService: AuthService) {}
 
-  onRegister(): void {
-    // Validate passwords match
+  async onRegister() {
+    // Password match check
     if (this.password !== this.confirmPassword) {
       alert('パスワードが一致しません');
       return;
     }
 
-    // Validate password length
     if (this.password.length < 8) {
       alert('パスワードは8文字以上である必要があります');
       return;
     }
 
-    console.log('Register attempt:', {
-      username: this.username,
-      email: this.email,
-      password: this.password
-    });
-    
-    // TODO: Add your registration logic here
-    // Example:
-    // this.authService.register(this.username, this.email, this.password).subscribe({
-    //   next: (response) => {
-    //     alert('登録が完了しました！');
-    //     this.router.navigate(['/login']);
-    //   },
-    //   error: (error) => {
-    //     console.error('Registration failed:', error);
-    //     alert('登録に失敗しました');
-    //   }
-    // });
+    try {
+      const result = await this.authService.register(
+        this.username,
+        this.email,
+        this.password
+      );
 
-    // For now, show success message and navigate to login (mock)
-    alert('登録が完了しました！');
-    this.router.navigate(['/login']);
+      alert('登録が完了しました！');
+      this.router.navigate(['/login']);
+      
+    } catch (error: any) {
+      console.error('Registration failed:', error);
+      alert('登録に失敗しました: ' + error.message);
+    }
   }
 }

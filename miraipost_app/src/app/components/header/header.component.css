@@ -84,6 +84,37 @@
   border-color: #65a30d;
 }
 
+
+.user-name {
+  font-weight: 600;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.user-name:hover {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.logout-btn {
+  background: transparent;
+  border: 1px solid #dc3545;
+  color: #dc3545;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background: #dc3545;
+  color: white;
+  text-decoration: none;
+}
+
 @media (max-width: 768px) {
   .header-container {
     padding: 1rem;

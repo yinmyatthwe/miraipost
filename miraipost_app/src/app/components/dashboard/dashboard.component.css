@@ -156,3 +156,79 @@ main{
   border: 2px dashed #90c44c;
   background: transparent;
 }
+/* Additional styles for updated dashboard */
+
+.no-letters {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+}
+
+.create-btn {
+  background: #90c44c;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 25px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.create-btn:hover {
+  background: #7bb23f;
+}
+
+.letter-card {
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.letter-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.recipient {
+  color: #90c44c;
+  font-weight: 600;
+  font-size: 0.9em;
+  margin: 8px 0 4px 0;
+}
+
+.message-preview {
+  color: #666;
+  font-size: 0.95em;
+  margin: 8px 0;
+  line-height: 1.4;
+}
+
+.letter-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.delete-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 12px;
+  font-size: 0.85em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.delete-btn:hover {
+  background: #c82333;
+}
+
+.stats-boxes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}

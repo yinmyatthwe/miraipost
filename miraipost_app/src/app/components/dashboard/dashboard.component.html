@@ -1,53 +1,86 @@
-  <main class="dashboard">
-    <h1 class="title">あなたの手紙一覧</h1>
+<main class="dashboard">
+  <h1 class="title">あなたの手紙一覧</h1>
 
-    <div class="filter-buttons">
-      <button class="filter-btn active">すべて</button>
-      <button class="filter-btn">未来の自分へ</button>
-      <button class="filter-btn">家族へ</button>
-      <button class="filter-btn">友達へ</button>
+  <div class="filter-buttons">
+    <button 
+      class="filter-btn" 
+      [class.active]="activeFilter === 'all'"
+      (click)="filterLetters('all')">
+      すべて
+    </button>
+    <button 
+      class="filter-btn"
+      [class.active]="activeFilter === 'future'"
+      (click)="filterLetters('future')">
+      未来の自分へ
+    </button>
+    <button 
+      class="filter-btn"
+      [class.active]="activeFilter === 'family'"
+      (click)="filterLetters('family')">
+      家族へ
+    </button>
+    <button 
+      class="filter-btn"
+      [class.active]="activeFilter === 'friend'"
+      (click)="filterLetters('friend')">
+      友達へ
+    </button>
+  </div>
+
+  <section class="letters">
+    <!-- No letters message -->
+    <div *ngIf="filteredLetters.length === 0" class="no-letters">
+      <p>まだ手紙がありません</p>
+      <button routerLink="/write" class="create-btn">手紙を書く</button>
     </div>
 
-    <section class="letters">
-      <div class="letter-card">
-        <div class="letter-header">
-          <h3>未来の自分へ</h3>
-          <span class="status sent">送信待ち</span>
-        </div>
-        <p>今日は20歳の誕生日！！</p>
-        <p class="date">2025年12月1日（あと〇日）</p>
+    <!-- Letter cards -->
+    <div 
+      *ngFor="let letter of filteredLetters" 
+      class="letter-card"
+      (click)="viewLetter(letter)">
+      <div class="letter-header">
+        <h3>{{ letter.title }}</h3>
+        <span class="status" [ngClass]="getStatusClass(letter.status)">
+          {{ getStatusText(letter.status) }}
+        </span>
       </div>
-
-      <div class="letter-card">
-        <div class="letter-header">
-          <h3>元気で頑張って！！</h3>
-          <span class="status received">受信待ち</span>
-        </div>
-        <p>わたしは元気で頑張っています。</p>
-        <p class="date">2025年11月20日（あと〇日）</p>
+      <p class="recipient">{{ getRecipientText(letter.recipient) }}</p>
+      <p class="message-preview">{{ getPreview(letter.message) }}</p>
+      <div class="letter-footer">
+        <p class="date">{{ formatDate(letter.sendAt) }}（{{ getDaysUntil(letter.sendAt) }}）</p>
+        <button 
+          class="delete-btn" 
+          (click)="deleteLetter(letter.id!, $event)"
+          *ngIf="letter.status === 'draft'">
+          削除
+        </button>
       </div>
+    </div>
+  </section>
 
-      <div class="letter-card">
-        <div class="letter-header">
-          <h3>お元気でやっていますか</h3>
-          <span class="status draft">下書き</span>
+  <section class="stats">
+    <div class="stats-container">
+      <button class="add-btn" routerLink="/write">新しい手紙を書く</button>
+      <div class="stats-boxes">
+        <div class="stat-box">
+          <p>今までに書いた手紙</p>
+          <h2>{{ totalLetters }}</h2>
         </div>
-        <p>わたしは楽しく過ごしています。</p>
-        <p class="date">2025年11月20日（あと〇日）</p>
-      </div>
-    </section>
-
-    <section class="stats">
-      <div class="stats-container">
-        <button class="add-btn">宛先で検索</button>
-        <div class="stats-boxes">
-          <div class="stat-box">
-            <p>今までに書いた手紙</p>
-            <h2>12</h2>
-          </div>
-          <div class="stat-box empty"></div>
+        <div class="stat-box">
+          <p>送信待ち</p>
+          <h2>{{ pendingCount }}</h2>
+        </div>
+        <div class="stat-box">
+          <p>下書き</p>
+          <h2>{{ draftCount }}</h2>
+        </div>
+        <div class="stat-box">
+          <p>送信済み</p>
+          <h2>{{ sentCount }}</h2>
         </div>
       </div>
-    </section>
-  </main>
-
+    </div>
+  </section>
+</main>

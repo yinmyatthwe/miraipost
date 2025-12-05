@@ -1,10 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { UserService, UserData } from '../../services/user.service';
 import { Firestore, doc, getDoc } from '@angular/fire/firestore';
-import { inject } from '@angular/core';
 
 @Component({
   selector: 'app-profile',
@@ -14,14 +13,12 @@ import { inject } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  private authService = inject(AuthService);
+  private userService = inject(UserService);
   private firestore = inject(Firestore);
-  
-  user: UserData | null = null;
+  private cdr = inject(ChangeDetectorRef);
 
-  constructor(
-    private authService: AuthService,
-    private userService: UserService
-  ) {}
+  user: UserData | null = null;
 
   async ngOnInit() {
     await this.loadUserProfile();
@@ -40,11 +37,13 @@ export class ProfileComponent implements OnInit {
             id: currentUser.uid,
             ...userSnapshot.data()
           } as UserData;
+          this.cdr.markForCheck();
         }
       }
     } catch (error) {
       console.error('Error loading profile:', error);
       alert('プロフィールの読み込みに失敗しました');
+      this.cdr.markForCheck();
     }
   }
 }

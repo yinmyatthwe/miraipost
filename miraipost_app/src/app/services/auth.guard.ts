@@ -9,7 +9,7 @@ export const authGuard = () => {
   if (auth.currentUser) {
     return true;
   } else {
-    alert('ログインが必要です');
+    // Navigate to login without alert (SSR safe)
     router.navigate(['/login']);
     return false;
   }

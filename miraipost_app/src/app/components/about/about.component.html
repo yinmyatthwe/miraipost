@@ -1,22 +1,149 @@
-    <main>
-        <div class="main-card">
-            <h1 class="title">About us</h1>
-            
-            <div class="section">
-                <button class="section-button">チーム紹介</button>
-                <div class="section-content"></div>
-            </div>
-
-            <div class="section">
-                <button class="section-button">目的</button>
-                <div class="section-content"></div>
-            </div>
-
-            <div class="section">
-                <button class="section-button">使用技術紹介</button>
-                <div class="section-content"></div>
+<main class="about-container">
+    <div class="main-card">
+        <h1 class="title">About Us</h1>
+        
+        <!-- チーム紹介 -->
+        <div class="section">
+            <button class="section-button" (click)="toggleSection('team')">
+                チーム紹介
+                <span class="arrow" [class.open]="openSection === 'team'">▼</span>
+            </button>
+            <div class="section-content" [class.active]="openSection === 'team'">
+                <h3>未来ポストチーム</h3>
+                <p>私たちは、大切な思い出や感情を未来に届けることをミッションとする開発チームです。</p>
+                
+                <div class="team-members">
+                    <div class="member">
+                        <div class="member-icon">👨‍💻</div>
+                        <h4>フロントエンド開発</h4>
+                        <p>Angular + TypeScriptを使用したモダンなUI/UX設計</p>
+                    </div>
+                    
+                    <div class="member">
+                        <div class="member-icon">🎨</div>
+                        <h4>デザイン</h4>
+                        <p>使いやすさと美しさを両立したインターフェース設計</p>
+                    </div>
+                    
+                    <div class="member">
+                        <div class="member-icon">🔧</div>
+                        <h4>バックエンド統合</h4>
+                        <p>Firebase を活用したサーバーレスアーキテクチャ</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </main>
 
-   
+        <!-- 目的 -->
+        <div class="section">
+            <button class="section-button" (click)="toggleSection('purpose')">
+                目的
+                <span class="arrow" [class.open]="openSection === 'purpose'">▼</span>
+            </button>
+            <div class="section-content" [class.active]="openSection === 'purpose'">
+                <h3>プロジェクトの目的</h3>
+                
+                <div class="purpose-item">
+                    <div class="purpose-icon">💌</div>
+                    <div class="purpose-text">
+                        <h4>未来への手紙</h4>
+                        <p>今の気持ちや思い出を未来の自分や大切な人に届けるサービスを提供します。指定した日時に自動で手紙をメール配信することで、特別な瞬間をより意味深いものにします。</p>
+                    </div>
+                </div>
+
+                <div class="purpose-item">
+                    <div class="purpose-icon">🎯</div>
+                    <div class="purpose-text">
+                        <h4>感情の保存</h4>
+                        <p>大切な思い出や感情を形に残し、時間を超えて届けることで、人生の節目をより印象的にサポートします。</p>
+                    </div>
+                </div>
+
+                <div class="purpose-item">
+                    <div class="purpose-icon">🌟</div>
+                    <div class="purpose-text">
+                        <h4>つながりの創造</h4>
+                        <p>過去の自分と未来の自分、そして大切な人とのつながりを創出し、時間を超えたコミュニケーションを実現します。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 使用技術紹介 -->
+        <div class="section">
+            <button class="section-button" (click)="toggleSection('tech')">
+                使用技術紹介
+                <span class="arrow" [class.open]="openSection === 'tech'">▼</span>
+            </button>
+            <div class="section-content" [class.active]="openSection === 'tech'">
+                <h3>技術スタック</h3>
+                
+                <div class="tech-category">
+                    <h4>フロントエンド</h4>
+                    <div class="tech-items">
+                        <div class="tech-item">
+                            <strong>Angular 18+</strong>
+                            <p>最新のスタンドアロンコンポーネントを使用した、モダンなフロントエンドフレームワーク</p>
+                        </div>
+                        <div class="tech-item">
+                            <strong>TypeScript</strong>
+                            <p>型安全性を提供し、バグを事前に防ぐプログラミング言語</p>
+                        </div>
+                        <div class="tech-item">
+                            <strong>RxJS</strong>
+                            <p>リアクティブプログラミングで非同期処理を効率的に管理</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h4>バックエンド</h4>
+                    <div class="tech-items">
+                        <div class="tech-item">
+                            <strong>Firebase Authentication</strong>
+                            <p>安全なユーザー認証システム（登録・ログイン・ログアウト）</p>
+                        </div>
+                        <div class="tech-item">
+                            <strong>Cloud Firestore</strong>
+                            <p>NoSQLデータベースでリアルタイムデータ同期を実現</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h4>開発ツール</h4>
+                    <div class="tech-items">
+                        <div class="tech-item">
+                            <strong>Angular CLI</strong>
+                            <p>効率的な開発を支援するコマンドラインツール</p>
+                        </div>
+                        <div class="tech-item">
+                            <strong>Git & GitHub</strong>
+                            <p>バージョン管理とチーム開発の基盤</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="tech-features">
+                    <h4>✨ 主な機能</h4>
+                    <ul>
+                        <li>ユーザー認証（登録・ログイン・ログアウト）</li>
+                        <li>手紙のCRUD操作（作成・閲覧・編集・削除）</li>
+                        <li>未来の日時指定配信</li>
+                        <li>リアルタイムデータ同期</li>
+                        <li>ルートガード（ページ保護）</li>
+                        <li>レスポンシブデザイン（モバイル対応）</li>
+                        <li>フォームバリデーション</li>
+                    </ul>
+                </div> -->
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-section">
+            <h3>お問い合わせ</h3>
+            <p>ご質問やフィードバックがございましたら、お気軽にお問い合わせください。</p>
+            <button class="contact-btn" routerLink="/">ホームに戻る</button>
+        </div>
+    </div>
+</main>

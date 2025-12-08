@@ -1,53 +1,76 @@
 <main class="home-container">
-  <section class="home-prompt">
-    <h2 class="home-greeting">〇〇さん、今日はどんなお手紙を書きますか？</h2>
-
-    <div class="home-letter-grid">
-      <div class="home-letter-card" routerLink="/write/future">
-        <img src="/images/自分へ.jpg" alt="未来の自分へ" class="home-letter-image">
-        <p class="home-letter-text">未来の自分へ向けて</p>
-      </div>
-      <div class="home-letter-card" routerLink="/write/friend">
-        <img src="/images/友達と.jpg" alt="大切な友達へ" class="home-letter-image">
-        <p class="home-letter-text">大切な友達へむけて</p>
-      </div>
-      <div class="home-letter-card" routerLink="/write/family">
-        <img src="/images/家族と.jpg" alt="大切な家族へ" class="home-letter-image">
-        <p class="home-letter-text">大切な家族へ向けて</p>
-      </div>
-      <div class="home-letter-card" routerLink="/list">
-        <img src="/images/いっぽん的.jpg" alt="手紙一覧" class="home-letter-image">
-        <p class="home-letter-text">手紙一覧</p>
-      </div>
+  <!-- Hero Section -->
+  <section class="home-hero">
+    <div class="home-hero-content">
+      <h1 class="home-hero-title">未来ポスト</h1>
+      <p class="home-hero-subtitle">大切な思いを、未来へ届けよう</p>
     </div>
-
-    <div class="home-buttons">
-      <button class="home-btn pending">送信待ち</button>
-      <button class="home-btn inbox">受信箱</button>
-      <button class="home-btn draft">下書き</button>
-    </div>
-
-    <button class="home-add-btn" routerLink="/write">＋</button>
   </section>
 
-  <section class="home-timeline">
-    <h3 class="home-timeline-title">手紙タイムライン</h3>
-    <div class="home-timeline-grid">
-      <div class="home-timeline-card">
-        <p class="home-timeline-date">〇月〇日</p>
-        <p class="home-timeline-recipient">未来の自分へ</p>
-        <div class="home-timeline-icon">✉️</div>
+  <!-- Letter Cards Section -->
+  <section class="home-prompt">
+    <h2 class="home-section-title">どんな手紙を書きますか？</h2>
+    
+    <div class="home-letter-grid">
+      <div class="home-letter-card" routerLink="/write" [queryParams]="{recipient: 'future'}">
+        <div class="card-image-wrapper">
+          <img src="/images/自分へ.jpg" alt="未来の自分へ" class="home-letter-image">
+          <div class="card-overlay"></div>
+        </div>
+        <p class="home-letter-text">未来の自分へ向けて</p>
       </div>
-      <div class="home-timeline-card">
-        <p class="home-timeline-date">〇月〇日</p>
-        <p class="home-timeline-recipient">未来の自分へ</p>
-        <div class="home-timeline-icon">✉️</div>
+      
+      <div class="home-letter-card" routerLink="/write" [queryParams]="{recipient: 'friend'}">
+        <div class="card-image-wrapper">
+          <img src="/images/友達と.jpg" alt="大切な友達へ" class="home-letter-image">
+          <div class="card-overlay"></div>
+        </div>
+        <p class="home-letter-text">大切な友達へ向けて</p>
       </div>
-      <div class="home-timeline-card">
-        <p class="home-timeline-date">〇月〇日</p>
-        <p class="home-timeline-recipient">未来の自分へ</p>
-        <div class="home-timeline-icon">✉️</div>
+      
+      <div class="home-letter-card" routerLink="/write" [queryParams]="{recipient: 'family'}">
+        <div class="card-image-wrapper">
+          <img src="/images/家族と.jpg" alt="大切な家族へ" class="home-letter-image">
+          <div class="card-overlay"></div>
+        </div>
+        <p class="home-letter-text">大切な家族へ向けて</p>
       </div>
+    </div>
+
+    <!-- Floating Add Button -->
+    <button class="home-add-btn" routerLink="/write" title="新しい手紙を書く">
+      <span class="add-icon">+</span>
+    </button>
+  </section>
+
+  <!-- Features Section -->
+  <section class="home-features">
+    <h3 class="features-title">未来ポストの使い方</h3>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">✍️</div>
+        <h4>手紙を書く</h4>
+        <p>大切な思いや感情を手紙に込めて書きましょう</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📅</div>
+        <h4>日時を指定</h4>
+        <p>未来の特別な日に届くように日時を設定できます</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📧</div>
+        <h4>自動配信</h4>
+        <p>指定した日時に自動でメールが送信されます</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="home-cta">
+    <div class="cta-content">
+      <h3 class="cta-title">今すぐ始めよう</h3>
+      <p class="cta-description">あなたの大切な思いを未来に届けましょう</p>
+      <button class="cta-button" routerLink="/write">手紙を書く</button>
     </div>
   </section>
 </main>

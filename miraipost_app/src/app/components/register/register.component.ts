@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -12,12 +12,14 @@ import { AuthService } from '../../services/auth.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
+  private router = inject(Router);
+  private authService = inject(AuthService);
+  private cdr = inject(ChangeDetectorRef);
+
   username: string = '';
   email: string = '';
   password: string = '';
   confirmPassword: string = '';
-
-  constructor(private router: Router, private authService: AuthService) {}
 
   async onRegister() {
     // Password match check
@@ -39,11 +41,13 @@ export class RegisterComponent {
       );
 
       alert('登録が完了しました！');
+      this.cdr.markForCheck();
       this.router.navigate(['/login']);
       
     } catch (error: any) {
       console.error('Registration failed:', error);
       alert('登録に失敗しました: ' + error.message);
+      this.cdr.markForCheck();
     }
   }
 }

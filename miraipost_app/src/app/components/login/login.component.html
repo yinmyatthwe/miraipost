@@ -1,6 +1,16 @@
 <main class="login-container">
   <div class="login-card">
     <h2 class="login-title">ログイン</h2>
+
+    <!-- Error Message -->
+    <div *ngIf="errorMessage" class="alert alert-error">
+      {{ errorMessage }}
+    </div>
+
+    <!-- Success Message -->
+    <div *ngIf="successMessage" class="alert alert-success">
+      {{ successMessage }}
+    </div>
     
     <form class="login-form" (ngSubmit)="onLogin()">
       <div class="login-form-group">
@@ -12,6 +22,7 @@
           class="login-input"
           placeholder="example@email.com"
           [(ngModel)]="email"
+          [disabled]="isLoading"
           required>
       </div>
 
@@ -24,10 +35,16 @@
           class="login-input"
           placeholder="パスワードを入力してください"
           [(ngModel)]="password"
+          [disabled]="isLoading"
           required>
       </div>
 
-      <button type="submit" class="login-btn">ログイン</button>
+      <button 
+        type="submit" 
+        class="login-btn"
+        [disabled]="isLoading">
+        {{ isLoading ? 'ログイン中...' : 'ログイン' }}
+      </button>
     </form>
 
     <div class="login-footer">

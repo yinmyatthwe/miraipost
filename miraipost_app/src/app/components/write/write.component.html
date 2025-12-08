@@ -1,6 +1,16 @@
 <main class="write-letter-container">
   <div class="write-letter-card">
-    <h2 class="write-letter-title">手紙作成</h2>
+    <h2 class="write-letter-title">
+      {{ isEditMode ? '手紙編集' : '手紙作成' }}
+    </h2>
+
+    <!-- Messages -->
+    <div *ngIf="errorMessage" class="alert alert-error">
+      {{ errorMessage }}
+    </div>
+    <div *ngIf="successMessage" class="alert alert-success">
+      {{ successMessage }}
+    </div>
 
     <form class="write-letter-form" (ngSubmit)="onSubmit()">
       <!-- Who Section -->
@@ -10,7 +20,8 @@
           <select 
             class="write-letter-select"
             [(ngModel)]="letterData.recipient"
-            name="recipient">
+            name="recipient"
+            [disabled]="isLoading">
             <option value="future">未来の自分へ向けて</option>
             <option value="family">大切な家族へ向けて</option>
             <option value="friend">大切な友達へ向けて</option>
@@ -27,6 +38,7 @@
           placeholder="メールアドレス"
           [(ngModel)]="letterData.email"
           name="email"
+          [disabled]="isLoading"
           required>
       </div>
 
@@ -38,6 +50,7 @@
           class="write-letter-input"
           [(ngModel)]="letterData.deliveryDate"
           name="deliveryDate"
+          [disabled]="isLoading"
           required>
       </div>
 
@@ -50,6 +63,7 @@
           placeholder="手紙のタイトル"
           [(ngModel)]="letterData.title"
           name="title"
+          [disabled]="isLoading"
           required>
       </div>
 
@@ -60,6 +74,7 @@
           type="file" 
           class="write-letter-file-input"
           accept="image/*"
+          [disabled]="isLoading"
           (change)="onFileSelected($event)">
         <div *ngIf="selectedFileName" class="write-letter-file-name">
           選択済み: {{ selectedFileName }}
@@ -77,7 +92,8 @@
               type="radio" 
               name="paper" 
               value="plain"
-              [(ngModel)]="letterData.paperType">
+              [(ngModel)]="letterData.paperType"
+              [disabled]="isLoading">
             <img src="/images/plain_paper.jpg" alt="シンプル便箋" class="write-letter-paper-image">
           </label>
 
@@ -86,7 +102,8 @@
               type="radio" 
               name="paper" 
               value="flower"
-              [(ngModel)]="letterData.paperType">
+              [(ngModel)]="letterData.paperType"
+              [disabled]="isLoading">
             <img src="/images/flower.jpg" alt="花柄便箋" class="write-letter-paper-image">
           </label>
 
@@ -95,7 +112,8 @@
               type="radio" 
               name="paper" 
               value="sky"
-              [(ngModel)]="letterData.paperType">
+              [(ngModel)]="letterData.paperType"
+              [disabled]="isLoading">
             <img src="/images/sky.jpg" alt="空柄便箋" class="write-letter-paper-image">
           </label>
         </div>
@@ -108,16 +126,32 @@
           [(ngModel)]="letterData.content"
           name="content"
           rows="10"
+          [disabled]="isLoading"
           required></textarea>
       </div>
 
       <!-- Action Buttons -->
       <div class="write-letter-actions">
-        <button type="button" class="write-letter-btn save" (click)="onSaveDraft()">
-          一時保存
+        <button 
+          type="button" 
+          class="write-letter-btn save" 
+          (click)="onSaveDraft()"
+          [disabled]="isLoading">
+          {{ isEditMode ? '下書きとして更新' : '一時保存' }}
         </button>
-        <button type="submit" class="write-letter-btn send">
-          送信
+        <button 
+          type="submit" 
+          class="write-letter-btn send"
+          [disabled]="isLoading">
+          {{ isEditMode ? '更新して送信' : '送信' }}
+        </button>
+        <button 
+          *ngIf="isEditMode"
+          type="button" 
+          class="write-letter-btn delete" 
+          (click)="onDelete()"
+          [disabled]="isLoading">
+          削除
         </button>
       </div>
     </form>

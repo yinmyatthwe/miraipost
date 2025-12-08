@@ -1,0 +1,141 @@
+<main class="edit-profile-container">
+  <div class="edit-profile-card">
+    <h1 class="edit-profile-title">プロフィール編集</h1>
+
+    <!-- Messages -->
+    <div *ngIf="errorMessage" class="alert alert-error">
+      {{ errorMessage }}
+    </div>
+    <div *ngIf="successMessage" class="alert alert-success">
+      {{ successMessage }}
+    </div>
+
+    <!-- Edit Sections - Show immediately with initial data -->
+    <div class="edit-sections">
+      
+      <!-- Name Section -->
+      <div class="edit-section">
+        <div class="section-header">
+          <h3>名前</h3>
+          <button 
+            *ngIf="!editingName" 
+            (click)="editingName = true" 
+            class="btn-edit">
+            編集
+          </button>
+        </div>
+        
+        <div *ngIf="!editingName" class="section-content">
+          <p>{{ editName || '読み込み中...' }}</p>
+        </div>
+        
+        <div *ngIf="editingName" class="section-edit">
+          <input 
+            type="text" 
+            class="edit-input"
+            [(ngModel)]="editName"
+            placeholder="新しい名前">
+          <div class="edit-actions">
+            <button (click)="updateName()" class="btn-save" [disabled]="isLoading">
+              保存
+            </button>
+            <button (click)="cancelEdit()" class="btn-cancel">
+              キャンセル
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Email Section -->
+      <div class="edit-section">
+        <div class="section-header">
+          <h3>メールアドレス</h3>
+          <button 
+            *ngIf="!editingEmail" 
+            (click)="editingEmail = true" 
+            class="btn-edit">
+            編集
+          </button>
+        </div>
+        
+        <div *ngIf="!editingEmail" class="section-content">
+          <p>{{ editEmail || '読み込み中...' }}</p>
+        </div>
+        
+        <div *ngIf="editingEmail" class="section-edit">
+          <input 
+            type="email" 
+            class="edit-input"
+            [(ngModel)]="editEmail"
+            placeholder="新しいメールアドレス">
+          <div class="edit-actions">
+            <button (click)="updateEmail()" class="btn-save" [disabled]="isLoading">
+              保存
+            </button>
+            <button (click)="cancelEdit()" class="btn-cancel">
+              キャンセル
+            </button>
+          </div>
+          <p class="hint">※ メールアドレス変更には再ログインが必要な場合があります</p>
+        </div>
+      </div>
+
+      <!-- Password Section -->
+      <div class="edit-section">
+        <div class="section-header">
+          <h3>パスワード</h3>
+          <button 
+            *ngIf="!editingPassword" 
+            (click)="editingPassword = true" 
+            class="btn-edit">
+            変更
+          </button>
+        </div>
+        
+        <div *ngIf="!editingPassword" class="section-content">
+          <p>••••••••</p>
+        </div>
+        
+        <div *ngIf="editingPassword" class="section-edit">
+          <input 
+            type="password" 
+            class="edit-input"
+            [(ngModel)]="newPassword"
+            placeholder="新しいパスワード (8文字以上)">
+          <input 
+            type="password" 
+            class="edit-input"
+            [(ngModel)]="confirmPassword"
+            placeholder="パスワード確認">
+          <div class="edit-actions">
+            <button (click)="updatePassword()" class="btn-save" [disabled]="isLoading">
+              保存
+            </button>
+            <button (click)="cancelEdit()" class="btn-cancel">
+              キャンセル
+            </button>
+          </div>
+          <p class="hint">※ パスワード変更には再ログインが必要な場合があります</p>
+        </div>
+      </div>
+
+      <!-- Danger Zone -->
+      <div class="danger-zone">
+        <h3>危険な操作</h3>
+        <p class="danger-description">
+          アカウントを削除すると、すべてのデータが完全に削除され、復元できなくなります。
+        </p>
+        <button (click)="deleteAccount()" class="btn-delete" [disabled]="isLoading">
+          アカウントを削除
+        </button>
+      </div>
+
+      <!-- Back Button -->
+      <div class="back-section">
+        <button routerLink="/profile" class="btn-back">
+          プロフィールに戻る
+        </button>
+      </div>
+    </div>
+  </div>
+</main>

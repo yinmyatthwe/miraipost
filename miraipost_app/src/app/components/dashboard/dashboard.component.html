@@ -38,8 +38,7 @@
     <!-- Letter cards -->
     <div 
       *ngFor="let letter of filteredLetters" 
-      class="letter-card"
-      (click)="viewLetter(letter)">
+      class="letter-card">
       <div class="letter-header">
         <h3>{{ letter.title }}</h3>
         <span class="status" [ngClass]="getStatusClass(letter.status)">
@@ -50,12 +49,20 @@
       <p class="message-preview">{{ getPreview(letter.message) }}</p>
       <div class="letter-footer">
         <p class="date">{{ formatDate(letter.sendAt) }}（{{ getDaysUntil(letter.sendAt) }}）</p>
-        <button 
-          class="delete-btn" 
-          (click)="deleteLetter(letter.id!, $event)"
-          *ngIf="letter.status === 'draft'">
-          削除
-        </button>
+        <div class="letter-actions">
+          <button 
+            class="edit-btn" 
+            [routerLink]="['/write']"
+            [queryParams]="{id: letter.id}"
+            *ngIf="letter.status === 'draft' || letter.status === 'pending'">
+            編集
+          </button>
+          <button 
+            class="delete-btn" 
+            (click)="deleteLetter(letter.id!, $event)">
+            削除
+          </button>
+        </div>
       </div>
     </div>
   </section>

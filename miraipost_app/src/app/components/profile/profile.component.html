@@ -1,34 +1,36 @@
 <main class="profile-container">
   <div class="profile-card">
-    <h1 class="profile-title">プロフィール</h1>
+    <div class="profile-header">
+      <h1 class="profile-title">プロフィール</h1>
+      <button routerLink="/edit-profile" class="profile-edit-btn">
+        プロフィールを編集
+      </button>
+    </div>
     
     <div class="profile-section">
       <!-- Name Section -->
       <div class="profile-item">
         <span class="profile-label">名前</span>
         <span class="profile-value">{{ user?.name || '########' }}</span>
-        <a href="#" class="profile-btn-edit">変更</a>
       </div>
 
       <!-- Email Section -->
       <div class="profile-item">
         <span class="profile-label">メールアドレス</span>
         <span class="profile-value">{{ user?.email || '########' }}</span>
-        <a href="#" class="profile-btn-edit">変更</a>
       </div>
 
       <!-- Password Section -->
       <div class="profile-item">
         <span class="profile-label">パスワード</span>
-        <span class="profile-value">########</span>
-        <a href="#" class="profile-btn-edit">変更</a>
+        <span class="profile-value">••••••••</span>
       </div>
     </div>
 
     <div class="profile-actions">
-      <a routerLink="/my-posts" class="profile-action-btn posts">私の投稿</a>
-      <a routerLink="/replies" class="profile-action-btn replies">返信</a>
+      <a routerLink="/dashboard" class="profile-action-btn posts">手紙一覧</a>
       <a routerLink="/write" class="profile-action-btn write">手紙作成</a>
+      <a routerLink="/about" class="profile-action-btn replies">About Us</a>
     </div>
   </div>
 </main>

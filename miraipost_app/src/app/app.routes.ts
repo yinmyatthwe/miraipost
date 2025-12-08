@@ -9,6 +9,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { AboutComponent } from './components/about/about.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { WriteComponent } from './components/write/write.component';
+import { EditProfileComponent } from './components/edit-profile/edit-profile.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -32,6 +33,12 @@ export const routes: Routes = [
     component: DashboardComponent,
     canActivate: [authGuard]
   },
+  
+  {
+  path: 'edit-profile',
+  component: EditProfileComponent,
+  canActivate: [authGuard]
+},
   
   // Redirect unknown routes to home
   { path: '**', redirectTo: '' }

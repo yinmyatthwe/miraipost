@@ -11,11 +11,38 @@
   padding: 2rem;
 }
 
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
 .profile-title {
   font-size: 1.75rem;
   color: #1f2937;
-  margin-bottom: 2rem;
+  margin: 0;
   font-weight: 700;
+}
+
+.profile-edit-btn {
+  background: #84cc16;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.profile-edit-btn:hover {
+  background: #65a30d;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(132, 204, 22, 0.3);
 }
 
 .profile-section {
@@ -24,16 +51,11 @@
 
 .profile-item {
   display: grid;
-  grid-template-columns: 150px 1fr auto;
+  grid-template-columns: 150px 1fr;
   align-items: center;
   gap: 1rem;
   padding: 1rem 0;
   border-bottom: 1px solid #f3f4f6;
-}
-
-.profile-item.editing-password {
-  grid-template-columns: 150px 1fr auto;
-  align-items: start;
 }
 
 .profile-item:last-child {
@@ -49,62 +71,6 @@
 .profile-value {
   color: #6b7280;
   font-size: 0.95rem;
-}
-
-.profile-input {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
-  font-size: 0.95rem;
-  transition: border-color 0.2s;
-}
-
-.profile-input:focus {
-  outline: none;
-  border-color: #84cc16;
-}
-
-.password-inputs {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  width: 100%;
-}
-
-.profile-actions-inline {
-  display: flex;
-  gap: 0.5rem;
-}
-
-.profile-btn-edit,
-.profile-btn-save,
-.profile-btn-cancel {
-  color: #84cc16;
-  text-decoration: none;
-  font-size: 0.9rem;
-  padding: 0.4rem 1rem;
-  border: 1px solid #84cc16;
-  border-radius: 6px;
-  transition: all 0.2s ease;
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-.profile-btn-edit:hover,
-.profile-btn-save:hover {
-  background: #84cc16;
-  color: white;
-}
-
-.profile-btn-cancel {
-  color: #6b7280;
-  border-color: #d1d5db;
-}
-
-.profile-btn-cancel:hover {
-  background: #f3f4f6;
-  color: #374151;
 }
 
 .profile-actions {
@@ -152,16 +118,23 @@
 }
 
 @media (max-width: 640px) {
+  .profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .profile-edit-btn {
+    width: 100%;
+    text-align: center;
+  }
+
   .profile-item {
     grid-template-columns: 1fr;
     gap: 0.5rem;
   }
 
-  .profile-item.editing-password {
-    grid-template-columns: 1fr;
-  }
-
-  .profile-actions-inline {
-    justify-content: flex-start;
+  .profile-label {
+    font-size: 0.85rem;
   }
 }

@@ -246,6 +246,56 @@
 .write-letter-btn:active {
   transform: translateY(0);
 }
+/* Alert Messages */
+.alert {
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  animation: slideIn 0.3s ease-out;
+}
+
+.alert-error {
+  background-color: #fee;
+  color: #c33;
+  border: 1px solid #fcc;
+}
+
+.alert-success {
+  background-color: #efe;
+  color: #3c3;
+  border: 1px solid #cfc;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Delete Button */
+.write-letter-btn.delete {
+  background: #dc3545;
+  color: white;
+}
+
+.write-letter-btn.delete:hover {
+  background: #c82333;
+}
+
+/* Disabled State */
+.write-letter-input:disabled,
+.write-letter-select:disabled,
+.write-letter-textarea:disabled,
+.write-letter-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
 
 /* Responsive */
 @media (max-width: 640px) {
